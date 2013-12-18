@@ -15,6 +15,7 @@ $ cp config/example.database.yml config/database.yml
 $ psql postgres
   # create user ruby_bench with password '' CREATEDB;
   # \q
+$ brew install qt
 $ bundle
 $ rake db:create db:migrate
 $ rails s
