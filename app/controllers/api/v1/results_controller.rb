@@ -3,7 +3,11 @@ module API
     class ResultsController < ApplicationController
 
       def create
-        head :bad_request
+        if params[:result]
+          head :no_content
+        else
+          head :bad_request
+        end
       end
 
     end
