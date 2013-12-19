@@ -10,6 +10,7 @@ gem 'jbuilder',     '~> 1.2'
 gem 'sdoc',         group: :doc, require: false
 gem 'spring',       group: :development
 gem 'haml-rails'
+gem 'wisper',       '~>1.2.0'
 
 group :test, :development do
   gem 'rspec'

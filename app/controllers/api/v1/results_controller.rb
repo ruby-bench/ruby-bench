@@ -4,22 +4,18 @@ module API
       before_action :ensure_runner!
 
       def create
-        run = current_runner.runs.create(run_params)
+        store_results = StoreBenchmarkResults.new(params[:run], current_runner)
 
-        if run.valid?
+        store_results.on :success do
           head :no_content
-        else
+        end
+
+        store_results.on :failure do |run|
           render_errors_for(run)
         end
+
+        store_results.execute
       end
-
-      private
-
-        def run_params
-          params
-            .require(:run)
-            .permit(:ruby_version, :git_hash, :date, :results_attributes => [:benchmark, :score])
-        end
 
     end
   end
