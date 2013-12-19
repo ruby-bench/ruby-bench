@@ -1,9 +1,9 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :runner do
-    name "MyString"
-    hardware "MyString"
-    token "secret"
+  factory :result do
+    benchmark "MyString"
+    score "9.99"
+    run nil
   end
 end

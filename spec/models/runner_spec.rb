@@ -6,6 +6,18 @@ describe Runner do
       expect(build(:runner)).to be_valid
     end
 
+    describe "token" do
+      it "must be unique" do
+        runner = create(:runner)
+        expect(build(:runner, :token => runner.token)).to_not be_valid
+        expect(build(:runner, :token => runner.token.upcase)).to_not be_valid
+      end
+
+      it "cannot be blank" do
+        expect(build(:runner, :token => nil)).to_not be_valid
+      end
+    end
+
     describe "name" do
       it "must be unique" do
         runner = create(:runner)

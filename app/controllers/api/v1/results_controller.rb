@@ -1,23 +1,25 @@
 module API
   module V1
-    class ResultsController < ApplicationController
+    class ResultsController < ApiController
+      before_action :ensure_runner!
 
       def create
-        runner = Runner.find_or_initialize_by(name: runner_params[:name])
-        runner.hardware = runner_params[:hardware]
+        run = current_runner.runs.create(run_params)
 
-        if runner.save
+        if run.valid?
           head :no_content
         else
-          render_errors_for(runner)
+          render_errors_for(run)
         end
       end
 
       private
 
-      def runner_params
-        params.require(:runner).permit(:name, :hardware)
-      end
+        def run_params
+          params
+            .require(:run)
+            .permit(:ruby_version, :git_hash, :date, :results_attributes => [:benchmark, :score])
+        end
 
     end
   end
