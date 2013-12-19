@@ -39,9 +39,9 @@ curl -i -H 'Content-Type: application/json' -H 'X-Auth-Token: 123' -X POST http:
 
 Here are the response codes you should expect:
 
-204 - No Content - Successfully stored the run data
-401 - Unauthorized - The token you passed doesn't match a runner.
-422 - Unprocessable Entity - Validation failed in some way. The response body should contain details of the errors.
+* 204 - No Content - Successfully stored the run data
+* 401 - Unauthorized - The token you passed doesn't match a runner.
+* 422 - Unprocessable Entity - Validation failed in some way. The response body should contain details of the errors.
 
 How to contribute (core team)
 -----------------------------
