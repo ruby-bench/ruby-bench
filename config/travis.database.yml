@@ -1,0 +1,10 @@
+defaults: &defaults
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+test:
+  <<: *defaults
+  adapter: postgresql
+  database: ruby_bench_test
+  username: postgres
