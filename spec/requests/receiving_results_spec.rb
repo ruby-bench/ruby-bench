@@ -3,7 +3,7 @@ require "spec_helper"
 describe "Receiving results" do
   describe "POST /api/v1/results" do
     let(:runner) { create(:runner) }
-    let(:token) {{ 'X-Auth-Token' => runner.token }}
+    let(:token) {{ "Authorization" => "Token token=\"#{runner.token}\"" }}
 
     let(:params) do
       {
@@ -51,23 +51,22 @@ describe "Receiving results" do
     end
 
     context "when invalid data is provided" do
+      context "when no runner token is provided" do
+        before do
+          post api_v1_results_path, params
+        end
+
+        it_behaves_like "an unauthorized request"
+        it_behaves_like "an invalid run"
+      end
 
       context "when runner token is invalid" do
         before do
-          post api_v1_results_path, params, { 'X-Runner-Token' => 'derp' }
+          post api_v1_results_path, params, { "Authorization" => 'Token token="derp"' }
         end
 
-        it "returns a 401 status" do
-          expect(response.status).to eql(401)
-        end
-
-        it "does not create the run" do
-          expect(Run.count).to eq(0)
-        end
-
-        it "does not create any benchmark results" do
-          expect(Result.count).to eq(0)
-        end
+        it_behaves_like "an unauthorized request"
+        it_behaves_like "an invalid run"
       end
 
       context "when run details are invalid" do
@@ -77,14 +76,7 @@ describe "Receiving results" do
         end
 
         it_behaves_like "an invalid request"
-
-        it "does not create the run" do
-          expect(Run.count).to eq(0)
-        end
-
-        it "does not create any benchmark results" do
-          expect(Result.count).to eq(0)
-        end
+        it_behaves_like "an invalid run"
       end
 
       context "when run benchmarks are invalid" do
@@ -94,14 +86,7 @@ describe "Receiving results" do
         end
 
         it_behaves_like "an invalid request"
-
-        it "does not create the run" do
-          expect(Run.count).to eq(0)
-        end
-
-        it "does not create any benchmark results" do
-          expect(Result.count).to eq(0)
-        end
+        it_behaves_like "an invalid run"
       end
 
     end

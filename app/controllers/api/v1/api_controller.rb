@@ -8,17 +8,13 @@ module API
         end
 
         def ensure_runner!
-          current_runner || head(:unauthorized)
-        end
-
-        def current_runner
-          @current_runner ||= begin
-            current_token && Runner.find_by(:token => current_token)
+          authenticate_or_request_with_http_token do |token, options|
+            @current_runner = Runner.find_by(:token => token)
           end
         end
 
-        def current_token
-          env["HTTP_X_AUTH_TOKEN"]
+        def current_runner
+          @current_runner
         end
     end
   end
