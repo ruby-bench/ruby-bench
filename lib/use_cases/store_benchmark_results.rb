@@ -19,12 +19,11 @@ class StoreBenchmarkResults
   private
 
     def secure_params
-      ActionController::Parameters.new(@params)
-        .permit(
-          :ruby_version,
-          :git_hash,
-          :date,
-          :results_attributes => [:benchmark, :score]
-        )
+      @params.permit(
+        :ruby_version,
+        :git_hash,
+        :date,
+        :results_attributes => [:benchmark, :score]
+      )
     end
 end

@@ -4,7 +4,7 @@ module API
       before_action :ensure_runner!
 
       def create
-        store_results = StoreBenchmarkResults.new(params[:run], current_runner)
+        store_results = StoreBenchmarkResults.new(params.require(:run), current_runner)
 
         store_results.on :success do
           head :no_content
