@@ -20,6 +20,7 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'capybara-webkit'
+  gem 'dotenv-rails'
 end
 
 group :development do
