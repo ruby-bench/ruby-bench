@@ -11,8 +11,4 @@ class Runner < ActiveRecord::Base
 
   validates :hardware,
     :presence   => true
-
-  def to_s
-    "#{name} (#{hardware})"
-  end
 end

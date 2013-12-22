@@ -16,5 +16,4 @@
 /tmp
 
 database.yml
-.DS_Store
 .ruby-gemset
