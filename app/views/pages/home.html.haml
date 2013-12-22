@@ -6,7 +6,7 @@
     .panel.panel-default
       .panel-heading Select a runner and benchmark
       .panel-body
-        = form_for :runner, :method => :get, remote: true do |f|
+        = form_for :runner, :method => :get, :html =>{:id => "show_results"}, remote: true do |f|
           = f.select :id, @runners.map{|r| ["#{r.name} (#{r.hardware})", r.id]}
           = f.select :benchmark, @benchmarks.map{|b| [b, b]}
           = f.submit :value => "Display", :class => "btn btn-primary"
