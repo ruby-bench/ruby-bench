@@ -10,6 +10,7 @@ class CalculateBenchmarkResults
     runner.runs.includes(:results)
       .where("results.benchmark" => benchmark)
       .group(:ruby_version)
+      .order(:ruby_version)
       .average(:score)
   end
 end

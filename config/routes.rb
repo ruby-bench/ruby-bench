@@ -5,5 +5,7 @@ Rails.application.routes.draw do
     end
   end
 
+  get "display_graph", to: "graphs#display", as: :display_graph
+
   root 'pages#home'
 end
