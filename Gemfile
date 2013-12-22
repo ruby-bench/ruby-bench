@@ -12,6 +12,7 @@ gem 'spring',         group: :development
 gem 'haml-rails'
 gem 'wisper',         '~>1.2.0'
 gem 'bootstrap-sass', '~> 3.0.3.0'
+gem 'draper',         '~> 1.3'
 
 group :test, :development do
   gem 'rspec'
@@ -21,6 +22,7 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'capybara-webkit'
   gem 'dotenv-rails'
+  gem 'launchy'
 end
 
 group :development do
