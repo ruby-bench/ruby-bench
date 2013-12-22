@@ -1,9 +1,10 @@
-Ruby Bench
+Ruby Bench [![Build Status](https://travis-ci.org/ruby-bench/ruby-bench.png?branch=master)](https://travis-ci.org/ruby-bench/ruby-bench)
 ==========
 
 Collecting and displaying benchmarks for Rubies and popular gems.
 
 See http://samsaffron.com/archive/2013/12/11/call-to-action-long-running-ruby-benchmark for further information.
+Also see http://community.miniprofiler.com/t/initial-notes-about-the-ui-and-api-project/193 for initial thoughts on the API/UI project.
 
 How to install and run
 ----------------------
@@ -34,7 +35,7 @@ $ rails c
 Then you can post your results for a run, here is a sample cURL request that should work:
 
 ```
-curl -i -H 'Content-Type: application/json' -H 'X-Auth-Token: 123' -X POST http://localhost:3000/api/v1/results -d "{\"run\":{\"ruby_version\":\"2.0.0-p247\",\"git_hash\":\"c0a04be8ddcadcd89c02bc135e4b288f6d936704\",\"date\":\"2013-12-18T12:09:16+00:00\",\"results_attributes\":[{\"benchmark\":\"some_bench\",\"score\":\"222\"}]}}"
+curl -i -H 'Content-Type: application/json' -H 'Authorization: Token token="123"' -X POST http://localhost:3000/api/v1/results -d "{\"run\":{\"ruby_version\":\"2.0.0-p247\",\"git_hash\":\"c0a04be8ddcadcd89c02bc135e4b288f6d936704\",\"date\":\"2013-12-18T12:09:16+00:00\",\"results_attributes\":[{\"benchmark\":\"some_bench\",\"score\":\"222\"}]}}"
 ```
 
 Here are the response codes you should expect:
