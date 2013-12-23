@@ -1,9 +1,9 @@
 require "spec_helper"
 
 describe "Receiving results" do
-  describe "POST /api/v1/results" do
+  describe "POST API /api/results" do
     let(:runner) { create(:runner) }
-    let(:token) {{ "Authorization" => "Token token=\"#{runner.token}\"" }}
+    let(:headers) {{ "Authorization" => "Token token=\"#{runner.token}\"", "Accept" => "application/json,application/vnd.ruby_bench;ver=1" }}
 
     let(:params) do
       {
@@ -23,7 +23,7 @@ describe "Receiving results" do
       let(:run) { runner.runs.first }
 
       before do
-        post api_v1_results_path, params, token
+        post api_results_path, params, headers
       end
 
       it "returns a 204 status" do
@@ -53,7 +53,7 @@ describe "Receiving results" do
     context "when invalid data is provided" do
       context "when no runner token is provided" do
         before do
-          post api_v1_results_path, params
+          post api_results_path, params, {"Accept" => "application/json,application/vnd.ruby_bench;ver=1"}
         end
 
         it_behaves_like "an unauthorized request"
@@ -62,7 +62,7 @@ describe "Receiving results" do
 
       context "when runner token is invalid" do
         before do
-          post api_v1_results_path, params, { "Authorization" => 'Token token="derp"' }
+          post api_results_path, params, { "Authorization" => 'Token token="derp"', "Accept" => "application/json,application/vnd.ruby_bench;ver=1" }
         end
 
         it_behaves_like "an unauthorized request"
@@ -72,7 +72,7 @@ describe "Receiving results" do
       context "when run details are invalid" do
         before do
           params[:run][:ruby_version] = ""
-          post api_v1_results_path, params, token
+          post api_results_path, params, headers
         end
 
         it_behaves_like "an invalid request"
@@ -82,7 +82,7 @@ describe "Receiving results" do
       context "when run benchmarks are invalid" do
         before do
           params[:run][:results_attributes].first[:benchmark] = ""
-          post api_v1_results_path, params, token
+          post api_results_path, params, headers
         end
 
         it_behaves_like "an invalid request"

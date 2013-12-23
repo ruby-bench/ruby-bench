@@ -13,6 +13,7 @@ gem 'haml-rails'
 gem 'wisper',         '~>1.2.0'
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'draper',         '~> 1.3'
+gem 'biceps',         '~> 0.0.5'
 
 group :test, :development do
   gem 'rspec'
