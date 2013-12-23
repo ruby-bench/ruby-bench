@@ -33,6 +33,9 @@ GEM
     better_errors (1.0.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+    biceps (0.0.5)
+      rails (>= 3.0.0)
+      rake (>= 0.8.7)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.0.3.0)
@@ -183,6 +186,7 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
+  biceps (~> 0.0.5)
   binding_of_caller (>= 0.7.2)
   bootstrap-sass (~> 3.0.3.0)
   capybara (~> 2.2.0)
