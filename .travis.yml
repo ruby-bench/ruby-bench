@@ -12,4 +12,4 @@ addons:
 
 before_script:
   - cp config/travis.database.yml config/database.yml
-  - 'RAILS_ENV=test bundle exec rake db:create db:schema:load --trace'
+  - 'RAILS_ENV=test xvfb-run bundle exec rake db:create db:schema:load --trace'
