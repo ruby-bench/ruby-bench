@@ -1,0 +1,17 @@
+data = {
+  labels: <%= @results.keys.to_json.html_safe %>,
+  datasets: [{
+    fillColor: "rgba(151,187,205,0.5)",
+    strokeColor: "rgba(151,187,205,1)",
+    pointColor: "rgba(151,187,205,1)",
+    pointStrokeColor: "#fff",
+    data: [<%= @results.values.join(',').html_safe %>]
+  }]
+}
+
+options = {
+  bezierCurve: false
+}
+
+$(".chart_details").show().text("Showing results for <%= @benchmark %> which was run using <%= @runner.description %>.");
+line = new Chart($("#chart")[0].getContext('2d')).Line(data, options);

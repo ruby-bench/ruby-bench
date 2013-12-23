@@ -1,1 +1,15 @@
 %h1 Welcome to Ruby Bench
+%p Please select a runner and a benchmark to see average scores over time by Ruby version.
+
+.row
+  .col-md-12
+    .panel.panel-default
+      .panel-heading Select a runner and benchmark
+      .panel-body
+        = form_for :runner, :method => :get, :html =>{:id => "show_results"}, remote: true do |f|
+          = f.select :id, @runners.map{|r| [r.description, r.id]}
+          = f.select :benchmark, @benchmarks.map{|b| [b, b]}
+          = f.submit :value => "Display", :class => "btn btn-primary"
+
+%p.chart_details
+%canvas#chart{ :height => "450", :width => "1100"}
