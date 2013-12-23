@@ -1,4 +1,4 @@
-Ruby Bench [![Build Status](https://travis-ci.org/ruby-bench/ruby-bench.png?branch=master)](https://travis-ci.org/ruby-bench/ruby-bench)
+Ruby Bench [![Build Status](https://travis-ci.org/ruby-bench/ruby-bench.png?branch=master)](https://travis-ci.org/ruby-bench/ruby-bench) [![Code Climate](https://codeclimate.com/github/ruby-bench/ruby-bench.png)](https://codeclimate.com/github/ruby-bench/ruby-bench)
 ==========
 
 Collecting and displaying benchmarks for Rubies and popular gems.
