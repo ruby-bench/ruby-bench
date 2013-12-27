@@ -8,7 +8,6 @@ gem 'coffee-rails',   '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jbuilder',       '~> 1.2'
 gem 'sdoc',           group: :doc, require: false
-gem 'spring',         group: :development
 gem 'haml-rails'
 gem 'wisper',         '~> 1.2.0'
 gem 'bootstrap-sass', '~> 3.0.3.0'
@@ -32,4 +31,9 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller', '>= 0.7.2'
   gem 'quiet_assets'
+  gem 'spring'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
