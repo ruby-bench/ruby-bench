@@ -17,3 +17,4 @@
 
 database.yml
 .ruby-gemset
+.env
