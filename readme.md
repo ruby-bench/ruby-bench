@@ -6,13 +6,18 @@ Collecting and displaying benchmarks for Rubies and popular gems.
 * See http://samsaffron.com/archive/2013/12/11/call-to-action-long-running-ruby-benchmark for further information.
 * Also see http://community.miniprofiler.com/t/initial-notes-about-the-ui-and-api-project/193 for initial thoughts on the API/UI project.
 
-How to install and run
-----------------------
+We have a staging environment setup on Heroku so you can test out the app here:
+
+* http://ruby-bench-staging.herokuapp.com/
+
+How to install and run locally
+------------------------------
 
 ```
 $ git clone git@github.com:ruby-bench/ruby-bench.git
 $ cd ruby-bench
 $ cp config/example.database.yml config/database.yml
+$ cp .example.env .env
 $ psql postgres
   # create user ruby_bench with password '' CREATEDB;
   # \q
