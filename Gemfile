@@ -25,6 +25,7 @@ group :test, :development do
   gem 'capybara-webkit'
   gem 'dotenv-rails'
   gem 'launchy'
+  gem 'coveralls', require: false
 end
 
 group :development do

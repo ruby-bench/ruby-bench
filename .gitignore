@@ -18,3 +18,4 @@
 database.yml
 .ruby-gemset
 .env
+coverage
