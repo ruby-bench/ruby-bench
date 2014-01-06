@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :runner do
-    name "MyString"
-    hardware "MyString"
-    token "secret"
+    name
+    hardware { generate(:name) }
+    token
   end
 end

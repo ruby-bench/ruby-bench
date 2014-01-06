@@ -14,4 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require chart
-//= require_tree .
+//= require_self
+//= require_tree ./application
+
+window.RubyBench = {}

@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :result do
-    benchmark "MyString"
-    score "9.99"
-    run nil
+    benchmark { generate(:name) }
+    score     9.99
+    run
   end
 end
