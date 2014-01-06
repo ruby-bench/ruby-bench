@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :runners
+  resources :runners do
+    resources :results
+  end
 
   root 'pages#home'
 end
