@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :run do
-    ruby_version "MyString"
-    git_hash "MyString"
-    date "2013-12-18 21:30:35"
-    runner nil
+    ruby_version { generate(:name) }
+    git_hash     { generate(:token) }
+    date         1.day.ago
+    runner
   end
 end
