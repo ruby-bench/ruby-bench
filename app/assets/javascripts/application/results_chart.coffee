@@ -16,8 +16,7 @@ class RubyBench.LoadResultsChart
       params:
         runner_id: @runner
       dataType: 'json'
-      complete: (r) =>
-        data   = r.responseJSON
+      success: (data) =>
         params =
           labels: Object.keys(data)
           datasets: [

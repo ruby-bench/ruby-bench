@@ -19,6 +19,7 @@ gem 'foreman'
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails',  '~> 3.0.0.beta1'
+  gem 'teaspoon'
   gem 'capybara',     '~> 2.2.0'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
