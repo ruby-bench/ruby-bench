@@ -1,0 +1,7 @@
+if [ "$TEST_SUITE" == "rspec" ]; then
+  RAILS_ENV=test xvfb-run bundle exec rake --trace db:migrate spec
+elif [ "$TEST_SUITE" == "javascript" ]; then
+  bundle exec rake teaspoon
+else
+  echo "Not running any tests"
+fi
