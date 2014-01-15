@@ -11,7 +11,6 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 Capybara.configure do |config|
-  config.javascript_driver = :webkit
   config.match = :prefer_exact
 end
 
