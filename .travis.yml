@@ -3,6 +3,10 @@ rvm:
   - 2.1.0
   - ruby-head
 
+env:
+  - "TEST_SUITE=javascript"
+  - "TEST_SUITE=rspec"
+
 matrix:
   allow_failures:
     - rvm: ruby-head
@@ -10,8 +14,7 @@ matrix:
 addons:
   postgresql: 9.3
 
-script:
-  - RAILS_ENV=test xvfb-run bundle exec rake --trace db:migrate spec
+script: bin/ci
 
 before_script:
   - cp config/travis.database.yml config/database.yml
