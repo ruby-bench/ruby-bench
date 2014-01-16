@@ -54,23 +54,3 @@ We have a staging environment setup on Heroku so you can test out the app here:
 * http://ruby-bench-staging.herokuapp.com
 
 There is a runner installed with the token "123". You can use the cURL request above by just changing the URI you are posting to from ```http://localhost:3000/api/results``` to ```http://ruby-bench-staging.herokuapp.com/api/results```
-
-How to contribute (core team)
------------------------------
-
-1. Create a branch for your feature
-2. Send a PR with details of change
-3. Team (at least one person) reviews and comments/thumbs if all is good
-4. When you get a :+1: you can merge into master
-5. Delete your branch
-
-Please do not push directly to master :smile:
-
-How to contribute (everyone else)
----------------------------------
-
-1. Fork this repro
-2. Create a branch for your feature
-3. Send a PR with details of change
-4. We will review and comment as required
-5. When we are happy we'll merge into master
