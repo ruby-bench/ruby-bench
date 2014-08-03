@@ -1,16 +1,17 @@
 class Runner < ActiveRecord::Base
   has_many :runs
+  has_many :results, through: :runs
 
   validates :name,
-    :presence   => true,
-    :uniqueness => { :case_sensitive => false }
+    presence: true,
+    uniqueness: { case_sensitive: false }
 
   validates :token,
-    :presence   => true,
-    :uniqueness => { :case_sensitive => false }
+    presence: true,
+    uniqueness: { case_sensitive: false }
 
   validates :hardware,
-    :presence   => true
+    presence: true
 end
 
 # == Schema Information

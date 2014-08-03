@@ -5,10 +5,10 @@ class Run < ActiveRecord::Base
   accepts_nested_attributes_for :results
 
   validates :ruby_version,
-    :presence   => true
+    presence: true
 
   validates :date,
-    :presence   => true
+    presence: true
 end
 
 # == Schema Information
