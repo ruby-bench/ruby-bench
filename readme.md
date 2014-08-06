@@ -33,10 +33,25 @@ $ rails c
   > Runner.create :name => "Runner 1", :hardware => "xeon xyz 32GB - 2.2GHZ", :token => "123"
 ```
 
-Then you can post your results for a run, here is a sample cURL request that should work:
+Then you can post your results for a run, here is a sample for request params and cURL request that should work:
 
 ```
-curl -i -H 'Content-Type: application/json' -H 'Accept: application/json,application/vnd.ruby_bench;ver=1' -H 'Authorization: Token token="123"' -X POST http://localhost:3000/api/results -d "{\"run\":{\"ruby_version\":\"2.0.0-p247\",\"git_hash\":\"c0a04be8ddcadcd89c02bc135e4b288f6d936704\",\"date\":\"2013-12-18T12:09:16+00:00\",\"results_attributes\":[{\"benchmark\":\"some_bench\",\"score\":\"222\"}]}}"
+{
+  "run": {
+    "ruby_version": "2.1.0-p247",
+      "git_hash":"c0a04be8ddcadcd89c02bc135e4b288f6d936714",
+      "rails_version": "4.0.0",
+      "rails_git_hash": "7c4bfe",
+      "date": "2013-12-18T12:09:16+00:00",
+      "results_attributes": [
+      {"benchmark":"some_bench","score":"222"}
+    ]
+  }
+}
+```
+
+```
+curl -i -H 'Content-Type: application/json' -H 'Accept: application/json,application/vnd.ruby_bench;ver=1' -H 'Authorization: Token token="123"' -X POST http://localhost:3000/api/results -d "{\"run\":{\"ruby_version\":\"2.0.0-p247\",\"git_hash\":\"c0a04be8ddcadcd89c02bc135e4b288f6d936704\",\"rails_version\": \"4.0.0\",\"rails_git_hash\":\"7c4bfe\",\"date\":\"2013-12-18T12:09:16+00:00\",\"results_attributes\":[{\"benchmark\":\"some_bench\",\"score\":\"222\"}]}}"
 ```
 
 Here are the response codes you should expect:

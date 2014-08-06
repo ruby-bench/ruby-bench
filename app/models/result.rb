@@ -2,10 +2,10 @@ class Result < ActiveRecord::Base
   belongs_to :run
 
   validates :benchmark,
-    :presence   => true
+    presence: true
 
   validates :score,
-    :presence   => true
+    presence: true
 end
 
 # == Schema Information

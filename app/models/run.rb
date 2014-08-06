@@ -15,13 +15,15 @@ end
 #
 # Table name: runs
 #
-#  id           :integer          not null, primary key
-#  ruby_version :string(255)
-#  git_hash     :string(255)
-#  date         :datetime
-#  runner_id    :integer
-#  created_at   :datetime
-#  updated_at   :datetime
+#  id             :integer          not null, primary key
+#  ruby_version   :string(255)
+#  git_hash       :string(255)
+#  date           :datetime
+#  runner_id      :integer
+#  created_at     :datetime
+#  updated_at     :datetime
+#  rails_version  :string(255)
+#  rails_git_hash :string(255)
 #
 # Indexes
 #
