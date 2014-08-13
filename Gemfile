@@ -32,6 +32,8 @@ group :development do
   gem 'binding_of_caller', '>= 0.7.2'
   gem 'quiet_assets'
   gem 'spring'
+
+  gem 'annotate'
 end
 
 group :production do

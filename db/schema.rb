@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131218232707) do
+ActiveRecord::Schema.define(version: 20140806144908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 20131218232707) do
     t.integer  "runner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "rails_version"
+    t.string   "rails_git_hash"
   end
 
   add_index "runs", ["runner_id"], name: "index_runs_on_runner_id", using: :btree

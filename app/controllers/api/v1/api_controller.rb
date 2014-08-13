@@ -4,12 +4,12 @@ module API
       private
 
         def render_errors_for(model, status = :unprocessable_entity)
-          render :json => { :errors => model.errors }, :status => status
+          render json: { errors: model.errors }, status: status
         end
 
         def ensure_runner!
           authenticate_or_request_with_http_token do |token, options|
-            @current_runner = Runner.find_by(:token => token)
+            @current_runner = Runner.find_by(token: token)
           end
         end
 

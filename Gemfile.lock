@@ -27,6 +27,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    annotate (2.6.5)
+      activerecord (>= 2.3.0)
+      rake (>= 0.8.7)
     arel (5.0.0)
     atomic (1.1.14)
     better_errors (1.0.1)
@@ -214,6 +217,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
   better_errors
   biceps (~> 0.0.5)
   binding_of_caller (>= 0.7.2)
