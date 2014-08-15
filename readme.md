@@ -19,21 +19,23 @@ $ psql postgres
   # create user ruby_bench with password '' CREATEDB;
   # \q
 $ bundle
-$ rake db:create db:migrate
+$ rake db:create db:migrate db:seed
 $ rails s
 ```
 
 Sending data from a runner
 --------------------------
 
-First you need to create a runner in the app with a known token. If you want to send benchmarks again but from a differently spec'ed machine, just create another runner for it.
+A runner "Bolt 1" with the token "123" and 2 runs have already been setup.
+If you want to send benchmarks again but from a differently spec'ed machine,
+just create another runner for it.
 
 ```
 $ rails c
-  > Runner.create :name => "Runner 1", :hardware => "xeon xyz 32GB - 2.2GHZ", :token => "123"
+  > Runner.create :name => "Runner 2", :hardware => "xeon abc 16GB - 2.2GHZ", :token => "124"
 ```
 
-Then you can post your results for a run, here is a sample for request params and cURL request that should work:
+You can post results for a run like this:
 
 ```
 {
